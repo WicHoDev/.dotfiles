@@ -74,16 +74,16 @@ wslconfig /u <DistroName>   # to uninstall distro - where DistroName is the dist
 
 ## Nvim Config Requisites
 + For LSP
- - [ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation) ```sudo apt install ripgrep fd-find``` <br>
- - Install golang-go -- ```sudo apt install golang-go```
+  - [ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation) ```sudo apt install ripgrep fd-find``` <br>
+  - Install golang-go -- ```sudo apt install golang-go```
 + For Treesitter
- - ```sudo apt install gcc g++ make build-essential```
+  - ```sudo apt install gcc g++ make build-essential```
 + Lua Plugins
- -```sudo apt install luarocks``` 
+  -```sudo apt install luarocks``` 
 + install lazygit
- - ```sudo apt install lazygit```
+  - ```sudo apt install lazygit```
 + For Noice
- -```sudo apt install libnotify-bin```
+  -```sudo apt install libnotify-bin```
 + if not already install, also get
   - [Git](https://git-scm.com/download/win) ```sudo apt install git```
   - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)

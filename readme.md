@@ -35,5 +35,5 @@ stow root   # for zshrc, git and tmux config    ~/.config/.zshrc
   - needs [NERD font]((https://www.nerdfonts.com/font-downloads))
 
 
-# [Nvim Config](nvim/SetUpNVIM.md)
+# [Nvim Config](nvim/.config/nvim/SetUpNVIM.md)
 
