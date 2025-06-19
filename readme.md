@@ -29,11 +29,10 @@ stow root   # for zshrc, git and tmux config    ~/.config/.zshrc
   - if you installed nvim first you will have curl already
     - ```sudo apt install curl```
   - if in you are in WSL or linux you already have git
-    - [git](https://git-scm.com/download/win)
+    - [git](https://git-scm.com/download/win) ```sudo apt install git```
 + install theme -powerlevel10k ```git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k```
   - add ```powerlevel10k/powerlevel10k``` theme to line `11` on `ZSH_THEME = "theme" `
   - needs [NERD font]((https://www.nerdfonts.com/font-downloads))
-
 
 # [Nvim Config](nvim/.config/nvim/SetUpNVIM.md)
 

@@ -52,25 +52,6 @@ wslconfig /u <DistroName>   # to uninstall distro - where DistroName is the dist
     sudo rm -rf /usr/local/include/nvim
     sudo rm -rf /usr/local/man/man1/nvim.1
     ```
-## configure terminal (linux)
-+ install zsh ```sudo apt install zsh``` <br>
-+ change to zsh shell
-  ```
-  echo $0
-  chsh
-  /bin/zsh
-  echo $0
-  ```
-  - reboot (close terminal if in linux)
-  - chose option (2)
-+ install 'oh my zsh' - ```sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ```
-  - if you installed nvim first you will have curl already
-    - needs curl - ```sudo apt install curl```
-  - if in you are in WSL or linux you already have git
-    - [git](https://git-scm.com/download/win)
-+ install theme -powerlevel10k ```git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k```
-  - add ```powerlevel10k/powerlevel10k``` theme to line `11` on `ZSH_THEME = "theme" `
-  - needs [NERD font]((https://www.nerdfonts.com/font-downloads))
 
 ## Nvim Config Requisites
 + For LSP
