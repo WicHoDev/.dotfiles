@@ -79,11 +79,11 @@ wslconfig /u <DistroName>   # to uninstall distro - where DistroName is the dist
 + For Treesitter
   - ```sudo apt install gcc g++ make build-essential```
 + Lua Plugins
-  -```sudo apt install luarocks``` 
+  - ```sudo apt install luarocks``` 
 + install lazygit
   - ```sudo apt install lazygit```
 + For Noice
-  -```sudo apt install libnotify-bin```
+  - ```sudo apt install libnotify-bin```
 + if not already install, also get
   - [Git](https://git-scm.com/download/win) ```sudo apt install git```
   - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
