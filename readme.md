@@ -5,6 +5,7 @@ ln -s ~/.DOTFILES/.zshrc ~/.zshrc
 ln -s ~/.DOTFILES/.gitconfig ~/.gitconfig
 ln -s ~/.DOTFILES/nvim/ ~/.config/
 ln -s ~/.DOTFILES/i3/ ~/.config/
+ln -s ~/.DOTFILES/.tmux.conf ~/.tmux.conf
 ```
 
 # Todo
