@@ -2,8 +2,6 @@ local key = vim.keymap
 local opts  = { noremap = true, silent = true }
 local opts1 = { noremap = true, silent = false }
 
-
-
 --Directory / navigation / tree.lua
 -- key.set("n", "<leader>j", ":NvimTreeToggle<CR>", opts)    --Toggle tree  show / hide
 -- key.set("n", "<leader>k", ":NvimTreeFocus<CR>", opts)   --Focus on tree
@@ -59,29 +57,10 @@ key.set("n", "<leader>y", '"+y', opts1, {desc = "Copy to Selection System Clipbo
 key.set("n", "<leader>yy",'"+yy', opts1, {desc = "Copy Line to System Clipboard"}) -- copy line
 key.set('n', '<leader>p', '"+p', opts1, {desc = "Paste from Clipboard - Below"})
 key.set('n', '<leader>P', 'O<Esc>"+P', opts1, {desc = "Paste from Clipboard - Above"})
--- vim.api.nvim_set_keymap('n', '<leader>p', '"+p', opts)
-
-
--- Copy/Past to primary selection
---[[ key.set("v", "y", '"*y', opts)
-key.set("n", "y", '"*y', opts)
-key.set("n", "yy", '"*yy', opts)
-key.set('n', "p", '"*p', opts) ]]
-
---other--
--- key.set("n", "<leader>p", "\"_dP", opts)
---remove keybinds
 
 ----------------LazyGit----------------
 key.set("n", "<leader>lg", ":LazyGit<CR>", {desc = "Open Lazygit"} )
-
-----------------LSP----------------
--- local opts2 = { noremap = true, silent = true, buffer = bufnr, }
-key.set("n", "<leader>fd", function() vim.lsp.buf.definition() end, {desc = "Go to fuction definition"}, opts)
--- key.set("n", "<leader>ff", function() vim.lsp.buf.implementation() end, {desc = "Go to fuction Implementation"}, opts)
-key.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename Function"}, opts)
-
-----------------LSP----------------
+-------------Telescope-------------
 key.set("n", "<leader>fk", ":Telescope keymaps<CR>", {desc = "Open Key Maps"})
 key.set("n", "<leader>h", ":Telescope find_files<CR>", {desc = "Find File"})
 key.set("n", "<leader>g", ":Telescope live_grep<CR>,", {desc = "Live Grep"})

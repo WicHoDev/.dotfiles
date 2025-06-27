@@ -1,23 +1,31 @@
 return  {
-    {   --Mason Installation
-        "williamboman/mason.nvim",
-        cmd = "Mason",
-        event = "BufReadPre",
-        config = {
+    "mason-org/mason.nvim",
+    cmd = "Mason",
+    dependencies = {
+        "mason-org/mason-lspconfig.nvim", 
+    },
+    config = function()
+        local mason = require("mason")
+        local masonlsp = require("mason-lspconfig")
+        mason.setup({
             ui = {
                 icons = {
                     package_installed = "✓",
                     package_pending = "➜ ",
                     package_uninstalled = "✗",
-                }
-            }
-        }
-    },
-
-    {   --Mason-lspconfig instalation
-        "williamboman/mason-lspconfig.nvim", 
-        event = "BufReadPre",        
-        dependencies = "williamboman/mason.nvim",
-    },
-
+                },
+            },
+        })
+        masonlsp.setup({
+            ensure_installed = {
+                --add lsp langugaes--
+                "lua_ls",
+                "clangd",
+                "asm-lsp",
+                "ols",
+                "marksman",
+            },
+            automatic_installation = true,
+        })
+    end
 }

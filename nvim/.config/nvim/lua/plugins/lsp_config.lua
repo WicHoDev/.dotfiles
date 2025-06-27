@@ -1,153 +1,85 @@
--- TODO: re wriete LSP Config from scratch 
--- friday saounds good, just after exams
-
-local config = function()
-    local mason = require("mason")
-    require("neoconf").setup({})
-    local masonlsp = require("mason-lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-    local lspconfig = require("lspconfig")
-
-    --icons
-    --Error = "❌", Warn = "⚠️ ", Hint = "➕", Info = "ℹ️ "
-    --Error = "X", Warn = "W", Hint = "+", Info = "I"
-    local signs = { Error = "❌", Warn = "⚠️", Hint = "➕", Info = "ℹ️",}
-    for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
-    end
-
-    --keybinds
-    --[[ 
-    local on_attach = function(client, bufnr)
-        local opts = {noremap = true, silent = true, buffer = bufnr,}
-        --set keybinds
-        vim.keymap.set("n", "<leader>fd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-    end
- ]]
-
-    mason.setup()
-    masonlsp.setup({
-        ensure_installed ={
-
-            "efm",  --requiere for lsp
-            --------------------------------------------------
-            --add lsp langugaes--
-            "lua_ls",
-            "clangd",
-            "ols",
-            -- "clang_tidy",
-            -- "omnisharp",
-        },
-        automatic_installation = true,
-    })
-
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
-    ---lua
-    lspconfig.lua_ls.setup({
-        -- on_attach = on_attach,
-        settings = {
-            Lua = {
-                runtime = { version = "LuaJIT"},
-                diagnostics = { globals = { "vim" }, },
-                completion = { callSnippet = "Replace", },
-                workspace = { library = vim.api.nvim_get_runtime_file("", true), },
-            },
-        },
-    })
-    local luacheck = require("efmls-configs.linters.luacheck")
-    local stylua = require("efmls-configs.formatters.stylua")
-
-    --c++
-    lspconfig.clangd.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        cmd = {
-            "clangd",
-            "--offset-encoding=utf-16",
-        },
-        settings = {
-        },
-    })
-
-    local clangdformat = require("efmls-configs.formatters.clang_format")
-    local clangtidy = require("efmls-configs.linters.clang_tidy")
-
-    --Python
-    lspconfig.pyright.setup({
-        -- on_attach = on_attach,
-        capabilities = capabilities,
-    })
-    local pylint = require("efmls-configs.linters.pylint")
-
-    --odin
-    lspconfig.ols.setup({
-        -- on_attach = on_attach,
-        capabilities = capabilities,
-    })
-
-    --c#
-    --[[ lspconfig.omnisharp.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        omnisharp = {},
-        settings = {},
-    }) ]]
-    --uses same formatter as c++
-    -- local sonarlint = require("sonarlint")
-
-    ---------------------------------------------------- clangd fix
-
-    --EFM
-    lspconfig.efm.setup({
-
-        filetypes = {
-            "lua",
-            "c",
-            "cpp",
-            "py",
-            "odin",
-            -- "cs",
-        },
-        init_options = {
-            documentFormatting = true,
-            documentRangeFormatting = true,
-            hover = true,
-            documentSymbol = true,
-            codeAction = true,
-            completion = true,
-        },
-        settings = {
-            languages =
-                {
-                    -- language = { linters, Formatters },
-                    lua = {luacheck, stylua},
-                    cpp = {clangtidy,clangdformat }, --,clangdformat
-                    python = {pylint},
-                    -- cs  = {clangdformat},
-                },
-        },
-
-    })
-
-    -- format on save??
-end
-
-
 return{
     "neovim/nvim-lspconfig",
-    config = config,
-    lazy = false,
+    event = {"BufReadPre", "BufNewFile"},
     dependencies = {
-        "windwp/nvim-autopairs",
-        "williamboman/mason.nvim",
-        "creativenull/efmls-configs-nvim",
-        "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lsp",
+        {"antosha417/nvim-lsp-file-operations", config = true},
+        "windwp/nvim-autopairs",
     },
+    config = function()
+        local lspconf = require("lspconfig")
+        local cmplsp = require("cmp_nvim_lsp")
+        
+        local key = vim.keymap
+        local opts = {noremap = true, silent = true}
+        
+        local on_attach = function(client, bufnr)
+            key.set("n", "<leader>fd", vim.lsp.buf.definition , {desc = "Go to fuction definition"}, opts)
+            -- key.set("n", "<leader>ff", vim.lsp.buf.implementation() end, {desc = "Go to fuction Implementation"}, opts)
+            key.set("n", "<leader>rn", vim.lsp.buf.rename , { desc = "Rename Function"}, opts)
+            key.set("n", "<leader>rs", ":LspRestart<CR>" , { desc = "Restart LSP"}, opts)
+        end
 
+        local capabilities = cmplsp.default_capabilities()
+
+        local signs = { Error = "❌", Warn = "⚠️", Hint = "➕", Info = "ℹ️",}
+        for type, icon in pairs(signs) do
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
+        end
+        
+        --- Configure lsp servers ---
+        ------ Lua -----
+        vim.lsp.config('lua_ls', {
+            cmd = { "lua-language-server" },
+            filetypes = { "lua" },
+            root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" },
+            settings = { Lua = { diagnostics = { globals = {"vim"}, }, }, }
+        })
+        vim.lsp.enable('lua_ls')
+
+        -----C/C++ -----
+        vim.lsp.config('clangd', {
+            cmd = { "cland" },
+            offsetEncoding = { "utf-8", "utf-16" },
+            textDocument = {
+                completion = {
+                    editsNearCursor = true
+                }
+            },
+            filetypes = {"c", "c++"},
+        })
+        vim.lsp.enable('clangd')
+
+        ----- ASM -----
+        vim.lsp.config('asm_lsp', {
+            cmd = { "asm-lsp" },
+            filetypes = { "asm", "vmasm" },
+            root_markers = { ".asm-lsp.toml", ".git" },
+        })
+        vim.lsp.enable('asm_lsp')
+
+        ----- markup -----
+        vim.lsp.config('marksman', {
+            cmd = { "marksman", "server" },
+            filetypes = { "markdown", "markdown.mdx" },
+            root_markers = { ".marksman.toml", ".git" },
+        })
+        vim.lsp.enable("marksman")
+
+        ----- Odin -----
+        vim.lsp.config('ols', {
+            cmd = { "ols" },
+            filetypes = { "odin" },
+        })
+        vim.lsp.enable("ols")
+
+
+        ----- Zig -----
+        vim.lsp.config('zls', {
+            cmd = { "zls" },
+            filetypes = { "zig", "zir" },
+            root_markers = { "zls.json", "build.zig", ".git" },
+        })
+    end,
 }

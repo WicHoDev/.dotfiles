@@ -12,6 +12,7 @@
   - starship - `pacman -S starship`
   - setup shell:
     - add `eval "$(starship init zsh)"` to end of `.zshrc`
+  - oh-my-zsh 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
 
 ## Display/LogIn Manager
 + install lemurs - `pacman -S lemurs`

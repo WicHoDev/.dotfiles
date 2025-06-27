@@ -41,5 +41,4 @@ local opts = {
     },
 }
 
-require("lazy").setup("plugins", opts)		--all plugg ins are in folder "plugins"
-
+require("lazy").setup({{import = "plugins"}}, opts)		--all plugg ins are in folder "plugins"

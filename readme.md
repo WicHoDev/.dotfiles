@@ -1,5 +1,5 @@
 # Arch Instalation
-+ create a bootable USB with [ElenaEtche]r(url link)
++ create a bootable USB with [ElenaEtcher](https://etcher.balena.io)
   - run `archinstall` easier setup menu
 + ## for a normal instalation
   - select defaut partitioning
@@ -17,3 +17,4 @@
     - everything else select and configure as you like
 
 ## [Arch RICEing Config](docs/ArchRICEGuide.md)
+## [Nvim Config](docs/SetUpNVIM.md)
