@@ -74,7 +74,6 @@ return{
         })
         vim.lsp.enable("ols")
 
-
         ----- Zig -----
         vim.lsp.config('zls', {
             cmd = { "zls" },
