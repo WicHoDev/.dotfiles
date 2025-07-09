@@ -31,10 +31,11 @@ return{
         "rcarriga/nvim-notify",
         config = function()
             require("notify").setup({
-                border_colour = "#00d9ff",
+                border_colour = "#0096e1",
+                background_colour = "#000000",
                 render = "minimal",
                 stages = "fade",
-                timeout = 500,
+                timeout = 700,
                 icons = {
                     -- info = "",    -- Info icon
                     warn = "",    -- Warning icon
@@ -49,7 +50,7 @@ return{
     -- Disable conflicting notification messages (if using noice.nvim)
     config = function()
         require("noice").setup({
-            cmdline = { 
+            cmdline = {
                 enabled = true,
                 view = "cmdline",
             },

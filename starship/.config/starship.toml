@@ -1,0 +1,11 @@
+format = """$directory$git_branch$git_status$line_break$character"""
+right_format = """$git_commit$cmd_duration"""
+add_newline = false
+
+[directory]
+
+[git_branch]
+format = """[$symbol$branch(:$remote_branch)]($style)"""
+
+[git_status]
+format = '( [\[$all_status$ahead_behind\]]($style) )'

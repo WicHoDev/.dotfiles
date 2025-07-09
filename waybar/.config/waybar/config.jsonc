@@ -1,0 +1,125 @@
+// TODO
+/*
+//  - 
+//  - 
+*/
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 34, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-left": [
+        "clock",
+        "cpu",
+        "memory"
+    ],
+    "modules-right": [
+        // "keyboard-state",
+        "tray",
+        "network",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
+    // modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "urgent": " ",
+            "active": " ",
+            "default": " "
+        }
+    },
+
+    /*"keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "scrolllock": false,
+        "format": {
+            "numlock": "{icon}",
+            "capslock": "{icon}"
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        },
+        // "device-path": "/dev/input/event0"
+    },*/
+    "clock": {
+        "timezone": "America/Chicago",
+        "format": "{:%d - %H:%M} <span color='#0096e1'>|</span>",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "memory":{
+        "format": " {percentage}%" //<span color='#0096e1'>|</span> 
+    },
+    "cpu":{
+        "format": " {usage}% <span color='#0096e1'>|</span>"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} <span color='#0096e1'>|</span>",
+        "format-full": "{capacity}% {icon} <span color='#0096e1'>|</span>",
+        "format-plugged": "{capacity}%   <span color='#0096e1'>|</span>",
+        "format-charging": "{capacity}%   <span color='#0096e1'>|</span>",
+        "format-alt": "{time} {icon} <span color='#0096e1'>|</span>",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "network": {
+        // "format-wifi": " {signalStrength}% ↓{bandwidthDown} ↑{bandwidthUp}",
+        "format-wifi": "  {signalStrength}% <span color='#0096e1'>|</span>",
+        "tooltip-format": "{gwaddr}",
+        "format-disconnected": "Disconnected ⚠ <span color='#0096e1'>|</span>",
+        "format-alt": "{essid}"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon} <span color='#0096e1'>|</span>",
+        "format-bluetooth": "{volume}% {icon} {format_source} <span color='#0096e1'>|</span>",
+        "format-bluetooth-muted": " {icon} {format_source} <span color='#0096e1'>|</span>",
+        "format-muted": "{volume}%   <span color='#0096e1'>|</span>",
+        "format-icons": {
+            "headphone": " ",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+            "blueman": "bluetooth",
+            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        }
+    },
+
+    "custom/power": {
+        "format" : "⏻ ",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    }
+}

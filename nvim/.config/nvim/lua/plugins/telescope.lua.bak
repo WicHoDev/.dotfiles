@@ -1,0 +1,39 @@
+return {
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = { 
+        "nvim-lua/plenary.nvim",
+        {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
+    },
+    config = function() 
+        local telescope = require("telescope")
+        telescope.setup({
+            vim.keymap.set("n", "<space>ff", require('telescope.builtin').find_files)
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-j>"] = "move_selection_next",
+                        ["<C-k>"] = "move_selection_previous",
+                    },
+                },
+            },
+            pickers = {
+                find_files = {
+                    find_command = { "/usr/bin/fdfind", "--color", "never"  },
+                    theme = "dropdown",
+                    previewer = false,
+                    hidden = true,
+                },
+                live_grep = {
+                    theme = "dropdown",
+                    previewer = false,
+                },
+                find_buffers = {
+                    theme = "dropdown",
+                    previewer = false,
+                }
+            },
+        })
+        telescope.load_extension("fzf");
+    end
+}

@@ -1,6 +1,7 @@
 return  {
     "mason-org/mason.nvim",
     cmd = "Mason",
+    event = "BufReadPre",
     dependencies = {
         "mason-org/mason-lspconfig.nvim", 
     },
@@ -19,11 +20,13 @@ return  {
         masonlsp.setup({
             ensure_installed = {
                 --add lsp langugaes--
-                "lua_ls",
+                "asm_lsp",
                 "clangd",
-                "asm-lsp",
-                "ols",
-                "marksman",
+                "arduino_language_server",
+                --zig
+                "gopls",
+                --pythn
+                "lua_ls",
             },
             automatic_installation = true,
         })

@@ -7,6 +7,7 @@
 + Install zsh - `pacman -S zsh`
   - config - `~/.zshrc`
 + Set as default - `chsh -s $(which zhs)`
++install oh-my-zsh - ''
 
 + ### Shell prompt
   - starship - `pacman -S starship`

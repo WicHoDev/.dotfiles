@@ -7,7 +7,7 @@ opt.softtabstop = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
-
+vim.o.laststatus = 2
 -- Search
 opt.incsearch = true
 opt.ignorecase = true

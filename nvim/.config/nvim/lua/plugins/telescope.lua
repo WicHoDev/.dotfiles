@@ -1,37 +1,15 @@
+-- plugins/telescope.lua:
 return {
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    lazy = true,
+    cmd = { "Telescope" },
     dependencies = { 
-        "nvim-lua/plenary.nvim",
-        {"nvim-telescope/telescope-fzf-native.nvim", build = "make"},
+        'nvim-lua/plenary.nvim',
+        -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-    config = function() 
-        local telescope = require("telescope")
-        telescope.setup({
-            defaults = {
-                mappings = {
-                    i = {
-                        ["<C-j>"] = "move_selection_next",
-                        ["<C-k>"] = "move_selection_previous",
-                    },
-                },
-            },
-            pickers = {
-                find_files = {
-                    theme = "dropdown",
-                    previewer = false,
-                    hidden = true,
-                },
-                live_grep = {
-                    theme = "dropdown",
-                    previewer = false,
-                },
-                find_buffers = {
-                    theme = "dropdown",
-                    previewer = false,
-                }
-            },
-        })
-        telescope.load_extension("fzf");
+    config = function()
+        print("Hello1")
     end
 }
