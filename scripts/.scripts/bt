@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# TODO: create a selectection system for pair devices
+
+CrusherEvo="Crusher Evo"
+MAC_CrusherEvo=$(bluetoothctl -- devices Paired| grep "$CrusherEvo" | awk '{print $2}')
+
+case "$1" in
+    test)
+        bluetoothctl -- devices Connected | grep "$CrusherEvo"
+        ;;
+    connect)
+        if bluetoothctl -- devices Connected | grep -qs "$CrusherEvo"; then
+            echo "connected" 
+        else
+            printf "Not Connected\nConnecting %s...\n\n" "$CrusherEvo"
+            bluetoothctl -- scan on > /dev/null
+            sleep 1 > /dev/null
+            bluetoothctl -- connect $MAC_CrusherEvo > /dev/null
+            bluetoothctl -- scan off > /dev/null
+            echo "Connection Successful"
+        fi
+        ;;
+    disconnect)
+        if bluetoothctl -- devices Connected | grep -qs "$CrusherEvo"; then
+            echo "Disconnected from" "$CrusherEvo"
+            bluetoothctl -- disconnect $MAC_CrusherEvo > /dev/null
+            bluetoothctl -- scan off > /dev/null
+        fi
+        ;;
+esac

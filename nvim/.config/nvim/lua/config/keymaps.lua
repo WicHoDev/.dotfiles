@@ -37,7 +37,7 @@ key.set("n", "<leader>lg" , ":LazyGit<CR>"              , opts  , {desc = "Open 
 -------------Telescope-------------
 key.set("n", "<leader>fk" , ":Telescope keymaps<CR>"    , opts  , {desc = "Open Key Maps"})
 key.set("n", "<leader>g"  , ":Telescope git_files<CR>"  , opts  , {desc = "Find File"})
-key.set("n", "<leader>j"  , ":Telescope find_files<CR>"  , opts  , {desc = "Find File"})
+key.set("n", "<leader>j"  , ":Telescope find_files<CR>" , opts  , {desc = "Find File"})
 key.set("n", "<leader>h"  , ":Telescope live_grep<CR>," , opts  , {desc = "Live Grep"})
 key.set("n", "<leader>k"  , ":Telescope buffers<CR>"    , opts  , {desc = "Buffer List"})
 key.set("n", "<leader>t"  , "<cmd>TodoTelescope<cr>"    , opts  , {desc = "TODO List"})

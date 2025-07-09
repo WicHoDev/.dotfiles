@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.scripts/:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.zsh/.oh-my-zsh"
@@ -51,6 +52,7 @@ export VISUAL=vim
 # eza is needed
 #     `sudo packman -s eza`
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
+alias lsl="eza --color=always --long --git --icons=always --no-time --no-user"
 alias tree="ls --tree"
 alias cl="clear"
 

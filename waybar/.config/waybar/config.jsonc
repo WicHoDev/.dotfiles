@@ -9,7 +9,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 34, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 10, // Gaps between modules (4px)
+    "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-center": [
         "hyprland/workspaces"
@@ -74,8 +74,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon} <span color='#0096e1'>|</span>",
-        "format-full": "{capacity}% {icon} <span color='#0096e1'>|</span>",
+        "format": "{icon} {capacity}% <span color='#0096e1'>|</span>",
+        "format-full": "{icon} {capacity}% <span color='#0096e1'>|</span>",
         "format-plugged": "{capacity}%   <span color='#0096e1'>|</span>",
         "format-charging": "{capacity}%   <span color='#0096e1'>|</span>",
         "format-alt": "{time} {icon} <span color='#0096e1'>|</span>",
@@ -87,13 +87,13 @@
         "format-wifi": "  {signalStrength}% <span color='#0096e1'>|</span>",
         "tooltip-format": "{gwaddr}",
         "format-disconnected": "Disconnected ⚠ <span color='#0096e1'>|</span>",
-        "format-alt": "{essid}"
+        "format-alt": "{essid} <span color='#0096e1'>|</span>"
     },
 
     "pulseaudio": {
-        "format": "{volume}% {icon} <span color='#0096e1'>|</span>",
-        "format-bluetooth": "{volume}% {icon} {format_source} <span color='#0096e1'>|</span>",
-        "format-bluetooth-muted": " {icon} {format_source} <span color='#0096e1'>|</span>",
+        "format": "{icon} {volume}% <span color='#0096e1'>|</span>",
+        "format-bluetooth": " {icon}{volume}% <span color='#0096e1'>|</span>",
+        "format-bluetooth-muted": "  {volume}%<span color='#0096e1'>|</span>",
         "format-muted": "{volume}%   <span color='#0096e1'>|</span>",
         "format-icons": {
             "headphone": " ",
