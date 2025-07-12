@@ -2,6 +2,10 @@
 
 # TODO: create a selectection system for pair devices
 
+# ----- installation
+# sudo pacman -S bluetoothctl bluez bluez-utils
+
+
 CrusherEvo="Crusher Evo"
 MAC_CrusherEvo=$(bluetoothctl -- devices Paired| grep "$CrusherEvo" | awk '{print $2}')
 
@@ -14,6 +18,7 @@ case "$1" in
             echo "connected" 
         else
             printf "Not Connected\nConnecting %s...\n\n" "$CrusherEvo"
+            bluetoothctl -- power on | grep "Changing power on succeeded"
             bluetoothctl -- scan on > /dev/null
             sleep 1 > /dev/null
             bluetoothctl -- connect $MAC_CrusherEvo > /dev/null
@@ -26,6 +31,7 @@ case "$1" in
             echo "Disconnected from" "$CrusherEvo"
             bluetoothctl -- disconnect $MAC_CrusherEvo > /dev/null
             bluetoothctl -- scan off > /dev/null
+            bluetoothctl -- power off | grep "Changing power off succeeded"
         fi
         ;;
 esac

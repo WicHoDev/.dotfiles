@@ -1,12 +1,19 @@
 return {
-  "folke/todo-comments.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    _G.todo_comments = require("todo-comments")
+    "folke/todo-comments.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+        --[[ require('todo-comments').setup {
+            search = {
+                telescope = {
+                    theme = "ivy",
+                }
+            }
+        } ]]
+        _G.todo_comments = require("todo-comments")
         -- Add Keymaps Here
-    todo_comments.setup()
-  end,
+        todo_comments.setup()
+    end,
 }
 
 --[[

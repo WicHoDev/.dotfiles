@@ -5,7 +5,8 @@ local opts1 = { noremap = true, silent = false }
 
 vim.o.clipboard = ""
 
-key.set("n","<leader>wq"  , ":wqa<CR>"                  , opts  , { desc = "Save and Quit File"})
+key.set("n","<leader>wq"        , ":wqa<CR>"            , opts  , { desc = "Save and Quit File"})
+key.set("n","<leader>x"   , function () vim.cmd("source %") vim.notify("Source File") end, opts1  , { desc = "Source Current file"})
 
 ----------------LINE EDITING----------------
 -- Normal
@@ -35,13 +36,13 @@ key.set('n', '<leader>P'  , 'O<Esc>"+P'                 , opts1 , {desc = "Paste
 ----------------LazyGit----------------
 key.set("n", "<leader>lg" , ":LazyGit<CR>"              , opts  , {desc = "Open Lazygit"} )
 -------------Telescope-------------
-key.set("n", "<leader>fk" , ":Telescope keymaps<CR>"    , opts  , {desc = "Open Key Maps"})
-key.set("n", "<leader>g"  , ":Telescope git_files<CR>"  , opts  , {desc = "Find File"})
-key.set("n", "<leader>j"  , ":Telescope find_files<CR>" , opts  , {desc = "Find File"})
-key.set("n", "<leader>h"  , ":Telescope live_grep<CR>," , opts  , {desc = "Live Grep"})
-key.set("n", "<leader>k"  , ":Telescope buffers<CR>"    , opts  , {desc = "Buffer List"})
+--- this keymaps has been move to the "telescope.lua" file
 key.set("n", "<leader>t"  , "<cmd>TodoTelescope<cr>"    , opts  , {desc = "TODO List"})
-
+-- key.set("n", "<leader>fk" , ":Telescope keymaps<CR>"    , opts  , {desc = "Open Key Maps"})
+-- key.set("n", "<leader>g"  , ":Telescope git_files<CR>"  , opts  , {desc = "Find File"})
+-- key.set("n", "<leader>j"  , ":Telescope find_files<CR>" , opts  , {desc = "Find File"})
+-- key.set("n", "<leader>h"  , ":Telescope live_grep<CR>," , opts  , {desc = "Live Grep"})
+-- key.set("n", "<leader>k"  , ":Telescope buffers<CR>"    , opts  , {desc = "Buffer List"})
 ----------------TODO Comments----------------
 key.set("n", "[t"         , function() _G.todo_comments.jump_next() end,opts , { desc = "Next todo comment" })
 key.set("n", "]t"         , function() _G.todo_comments.jump_prev() end,opts , { desc = "Previous todo comment" })

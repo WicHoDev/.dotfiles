@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# ----- installation -----
+# sudo pacman -S hyprsunset
+case "$1" in
+    enable)
+        hyprsunset --temperature 3750 &
+        ;;
+    kill)
+        pkill hyprsunset
+        ;;
+esac

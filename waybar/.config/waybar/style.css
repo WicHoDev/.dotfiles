@@ -175,6 +175,9 @@ label:focus {
 
     /*background-color: #f1c40f;*/
 }
+#custom-bluetooth {
+    color: #0096e1;
+}
 
 #pulseaudio.muted {
     /*background-color: #90b1b1;*/

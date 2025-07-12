@@ -28,11 +28,16 @@ eval "$(starship init zsh)"
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+# Auto-start Hyprland on tty1 when zsh starts
+# if [[ -z "$DISPLAY" && "$(tty)" == "/dev/tty1" && -z "$WAYLAND_DISPLAY" ]]; then
+#     exec Hyprland
+# fi
+if [[ -z "$SSH_AUTH_SOCK" || ! -S "$SSH_AUTH_SOCK" ]]; then
     # If not running, start the ssh-agent and add the key
-    eval $(ssh-agent -s)
-    ssh-add ~/.ssh/github
-    tmux new -d -s dev
+    eval $(ssh-agent -s) > /dev/null
+    ssh-add ~/.ssh/github > /dev/null 2>&1
+    echo "SSH Agent Running - [X]"
+    # tmux new -d -s dev
 fi
 
 export EDITOR=vim

@@ -1,3 +1,4 @@
+shell-integration = zsh
 # This is the configuration file for Ghostty.
 #
 # This template file has been automatically created at the following
@@ -43,11 +44,11 @@ background = #000000
 # # Empty values are used to reset config keys to default.
 #key =
 #keybind =
-#keybind = ctrl+c = "copy_to_clipboard" "
-#keybind = ctrl+v = "paste_to_clipboard"
+# keybind = ctrl+c = "copy_to_clipboard" "
+# keybind = ctrl+v = "paste_to_clipboard"
 # # Some config options have unique syntaxes for their value,
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-shell-integration = zsh
+# shell-integration = zsh

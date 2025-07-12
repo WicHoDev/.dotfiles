@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# ----- installation
+#  MAYBE NO NEED TO INSTALL ANYTHING
+#
+# sudo pacman -S iwctl
+
+
+case "$1" in
+    TELMEX)
+        iwctl -- station wlan0 connect TELMEX-WiLink2-8BCD
+        ;;
+    BLANCA)
+        iwctl -- station wlan0 connect 'BLANCA C'
+        ;;
+
+esac
