@@ -21,7 +21,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh  #need to install autosuggestion plugin
-eval "$(starship init zsh)"
+eval "$(starship init zsh)" > /dev/null
 
 # ----- User configuration ----- #
 # You may need to manually set your language environment
@@ -32,12 +32,17 @@ export LANG=en_US.UTF-8
 # if [[ -z "$DISPLAY" && "$(tty)" == "/dev/tty1" && -z "$WAYLAND_DISPLAY" ]]; then
 #     exec Hyprland
 # fi
+
+# ps -p $SSH_AGENT_PID > /dev/null || eval "$(ssh-agent -s)"
 if [[ -z "$SSH_AUTH_SOCK" || ! -S "$SSH_AUTH_SOCK" ]]; then
     # If not running, start the ssh-agent and add the key
-    eval $(ssh-agent -s) > /dev/null
-    ssh-add ~/.ssh/github > /dev/null 2>&1
+    eval $(ssh-agent -s) > /dev/null \
+    ssh-add ~/.ssh/github > /dev/null 2>&1 \n
+    clear
     echo "SSH Agent Running - [X]"
     # tmux new -d -s dev
+else
+    clear
 fi
 
 export EDITOR=vim
@@ -56,10 +61,10 @@ export VISUAL=vim
 
 # eza is needed
 #     `sudo packman -s eza`
-alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
-alias lsl="eza --color=always --long --git --icons=always --no-time --no-user"
-alias tree="ls --tree"
-alias cl="clear"
+alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions" \
+alias lsl="eza --color=always --long --git --icons=always --no-time --no-user" \
+alias tree="ls --tree" \
+alias cl="clear" \
 
 # export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.14.1/
-export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.15.0-dev.905+edf785db0/ #dev version uncomment if needed
+export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.15.0-dev.905+edf785db0/ #dev version uncomment if needed 

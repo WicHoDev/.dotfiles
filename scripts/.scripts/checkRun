@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# ps -p $SSH_AGENT_PID > /dev/null || eval "$(ssh-agent -s)"
+
+if ps -p $SSH_AGENT_PID; then
+    echo "SSH - [x]"
+else
+    echo "SSH - [ ]"
+fi

@@ -1,0 +1,16 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us(basic)" // Include the base US layout
+
+    // Remap number keys: base level is symbol, Shift level is number
+    key <AE01> { [ exclam, 1 ] }; // Keycode 10: 1 -> !, Shift+1 -> 1
+    key <AE02> { [ at, 2 ] };     // Keycode 11: 2 -> @, Shift+2 -> 2
+    key <AE03> { [ numbersign, 3 ] }; // Keycode 12: 3 -> #, Shift+3 -> 3
+    key <AE04> { [ dollar, 4 ] }; // Keycode 13: 4 -> $, Shift+4 -> 4
+    key <AE05> { [ percent, 5 ] }; // Keycode 14: 5 -> %, Shift+5 -> 5
+    key <AE06> { [ asciicircum, 6 ] }; // Keycode 15: 6 -> ^, Shift+6 -> 6
+    key <AE07> { [ ampersand, 7 ] }; // Keycode 16: 7 -> &, Shift+7 -> 7
+    key <AE08> { [ asterisk, 8 ] }; // Keycode 17: 8 -> *, Shift+8 -> 8
+    key <AE09> { [ parenleft, 9 ] }; // Keycode 18: 9 -> (, Shift+9 -> 9
+    key <AE10> { [ parenright, 0 ] }; // Keycode 19: 0 -> ), Shift+0 -> 0
+};

@@ -2,7 +2,6 @@ local key = vim.keymap
 local opts  = { noremap = true, silent = true }
 local opts1 = { noremap = true, silent = false }
 
-
 vim.o.clipboard = ""
 
 key.set("n","<leader>wq"        , ":wqa<CR>"            , opts  , { desc = "Save and Quit File"})
