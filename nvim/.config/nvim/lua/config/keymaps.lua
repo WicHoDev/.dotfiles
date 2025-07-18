@@ -5,6 +5,7 @@ local opts1 = { noremap = true, silent = false }
 vim.o.clipboard = ""
 
 key.set("n","<leader>wq"        , ":wqa<CR>"            , opts  , { desc = "Save and Quit File"})
+key.set("n","<leader>cw"        , ":bd!<CR>"            , opts  , { desc = "Close Buffer"})
 key.set("n","<leader>x"   , function () vim.cmd("source %") vim.notify("Source File") end, opts1  , { desc = "Source Current file"})
 
 ----------------LINE EDITING----------------
@@ -13,7 +14,7 @@ key.set("n", "<A-k>"      , ':m .-2<CR>=='              , opts  , {desc = "Move 
 key.set("n", "<A-j>"      , ':m .+1<CR>=='              , opts  , {desc = "Move Line Down"})
 key.set("n", "<A-h>"      , "v<"                        , opts  , {desc = "Indent Line - IN"})
 key.set("n", "<A-l>"      , "v>"                        , opts  , {desc = "Indent Line - OUT"} )
- -- Visual
+-- Visual
 key.set("v", "<A-k>"      , ":m '<-2<CR>gv=gv"          , opts  , {desc = "Move Code Block Up"})
 key.set("v", "<A-j>"      , ":m '>+1<CR>gv=gv"          , opts  , {desc = "Move Code Block Down"})
 key.set("v", "<A-h>"      , "<v"                        , opts  , {desc = "Indent Code Block - IN"})
@@ -21,7 +22,7 @@ key.set("v", "<A-l>"      , ">v"                        , opts  , {desc = "Inden
 
 ----------------OTHERS----------------
 --buffer nav
-key.set("n", "<C-w>"      , ":bd<CR>"                   , opts1 , {desc = "Close Current File in Buffer"})
+-- key.set("n", "<C-w>"      , ":bd<CR>"                   , opts1 , {desc = "Close Current File in Buffer"})
 key.set("n", "<C-n>"      , ":bp<CR>"                   , opts  , {desc = "Go to Prev file in Buffer"})
 key.set("n", "<C-m>"      , ":bn<CR>"                   , opts  , {desc = "Go to Next file in Buffer"})
 
@@ -45,3 +46,24 @@ key.set("n", "<leader>t"  , "<cmd>TodoTelescope<cr>"    , opts  , {desc = "TODO 
 ----------------TODO Comments----------------
 key.set("n", "[t"         , function() _G.todo_comments.jump_next() end,opts , { desc = "Next todo comment" })
 key.set("n", "]t"         , function() _G.todo_comments.jump_prev() end,opts , { desc = "Previous todo comment" })
+
+---------------- Terminal ----------------
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", {desc = "exit insert mode in terminal"})
+
+
+---------------- Custom plugins ----------------
+
+--[[ vim.api.nvim_create_autocmd('TermOpen', {
+    group = vim.api.nvim_create_augroup('custom-term-open', {clear = true}),
+    callback = function ()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end,
+})
+key.set("n", "<leader>st" , function ()
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0,15)
+    -- job_id = vim.bi.channel
+end) ]]

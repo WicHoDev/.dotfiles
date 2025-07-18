@@ -1,11 +1,11 @@
 local config = function()
     -- local theme = require('lualine.themes.onedark')
-    local theme = require('lualine.themes.material')
+    -- local theme = require('lualine.themes.material')
     -- theme.normal.c.bg = nil
 
     require("lualine").setup{
         options = {
-            theme = theme,
+            -- theme = theme,
             section_separators = '',
             component_separators = '',
             -- icons_enabled = true,

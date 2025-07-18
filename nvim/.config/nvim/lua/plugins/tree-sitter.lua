@@ -17,10 +17,10 @@ local config = function()
             "vimdoc",
             "cmake",
         },
-        auto_install = true,
+        auto_install = false,
         highlight = {
             enable = true,
-            additiona_vim_regex_highlighting = true,
+            additiona_vim_regex_highlighting = false,
         },
     })
 end

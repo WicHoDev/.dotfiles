@@ -7,9 +7,9 @@
 
 
 case "$1" in
-    TELMEX)
-        iwctl -- station wlan0 connect TELMEX-WiLink2-8BCD
-        ;;
+    # TELMEX)
+    #     iwctl -- station wlan0 connect TELMEX-WiLink2-8BCD
+    #     ;;
     BLANCA)
         iwctl -- station wlan0 connect 'BLANCA C'
         ;;

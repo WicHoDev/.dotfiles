@@ -39,14 +39,17 @@ if [[ -z "$SSH_AUTH_SOCK" || ! -S "$SSH_AUTH_SOCK" ]]; then
     eval $(ssh-agent -s) > /dev/null \
     ssh-add ~/.ssh/github > /dev/null 2>&1 \n
     clear
-    echo "SSH Agent Running - [X]"
     # tmux new -d -s dev
 else
     clear
 fi
 
-export EDITOR=vim
-export VISUAL=vim
+if uwsm check may-start > /dev/null; then
+    exec systemd-cat -t uwsm_start uwsm start hyprland.desktop
+fi
+
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -65,6 +68,7 @@ alias ls="eza --color=always --long --git --icons=always --no-time --no-user --n
 alias lsl="eza --color=always --long --git --icons=always --no-time --no-user" \
 alias tree="ls --tree" \
 alias cl="clear" \
+alias vim='nvim'
 
 # export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.14.1/
 export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.15.0-dev.905+edf785db0/ #dev version uncomment if needed 
