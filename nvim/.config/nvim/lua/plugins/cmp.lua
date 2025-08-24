@@ -9,7 +9,7 @@ return {
             nerd_font_variant = 'normal',
         },
         sources = {
-            default = { 'lsp', 'buffer', 'snippets', 'path', },
+            default = { 'lsp', --[['buffer',]] 'snippets', 'path', },
         },
         signature = { enabled = true },
         -- completion = { documentation = { auto_show = false } },

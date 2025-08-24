@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-case '$1' in
+case "$1" in
     school)
-        echo $(rclone mount school: ~/gdrive/school &)
+        rclone mount school: ~/gdrive/school/ &
         ;;
+    umount)
+        fusermount3 -u ~/gdrive/school/
 esac

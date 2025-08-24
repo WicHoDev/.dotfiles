@@ -70,3 +70,5 @@ end
 vim.api.nvim_create_user_command("Floaterminal", toggle_floaterminal , {})
 vim.keymap.set({"n", "t"}, "<leader>ft", toggle_floaterminal, {noremap = true, silent = false})
 vim.keymap.set("n", "<leader>st" , spli_term, {})
+
+return {}

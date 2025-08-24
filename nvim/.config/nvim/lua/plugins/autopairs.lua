@@ -1,4 +1,4 @@
-return {
+--[[ return {
 
     "windwp/nvim-autopairs",
     event = "InsertEnter",  -- Load the plugin only in insert mode
@@ -16,4 +16,10 @@ return {
 
         cmp.event:on("config_done", cmp_autopairs.on_confirm_done())
     end,
+} ]]
+
+
+return {
+    "cohama/lexima.vim",
+    event = "InsertEnter"
 }

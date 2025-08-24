@@ -21,8 +21,8 @@ opt.termguicolors = true
 --[[ opt.textwidth = 80
 opt.colorcolumn = "100"
 opt.signcolumn = "yes" ]]
-opt.cmdheight = 1
-opt.scrolloff = 10
+opt.cmdheight = 2
+opt.scrolloff = 15
 opt.completeopt = "menuone,noinsert,noselect"
 
 -- Behaviour
@@ -41,16 +41,16 @@ opt.mouse:append("a")
 opt.clipboard:append("unnamedplus")
 -- Clipboard support for Wayland
 vim.g.clipboard = {
-  name = "wl-clipboard",
-  copy = {
-    ["+"] = "wl-copy",
-    ["*"] = "wl-copy",
-  },
-  paste = {
-    ["+"] = "wl-paste --no-newline",
-    ["*"] = "wl-paste --no-newline",
-  },
-  cache_enabled = true,
+    name = "wl-clipboard",
+    copy = {
+        ["+"] = "wl-copy",
+        ["*"] = "wl-copy",
+    },
+    paste = {
+        ["+"] = "wl-paste --no-newline",
+        ["*"] = "wl-paste --no-newline",
+    },
+    cache_enabled = true,
 }
 opt.modifiable = true
 opt.guicursor =	"n-v-c:block,i:ver25,"  --r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175

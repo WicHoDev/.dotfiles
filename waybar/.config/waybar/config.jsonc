@@ -66,10 +66,10 @@
         // "device-path": "/dev/input/event0"
     },*/
     "clock": {
-        "timezone": "America/Chicago",
+        // "timezone": "America/Chicago",
         "format": "{:%d - %H:%M} <span color='#0096e1'>|</span>",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%m-%d-%Y}"
     },
     "memory":{
         "format": " {percentage}%" //<span color='#0096e1'>|</span> 
@@ -95,7 +95,7 @@
         // "format-wifi": " {signalStrength}% ↓{bandwidthDown} ↑{bandwidthUp}",
         "format-wifi": "  {signalStrength}% <span color='#0096e1'>|</span>",
         "tooltip-format": "{gwaddr}",
-        "format-disconnected": "Disconnected ⚠ <span color='#0096e1'>|</span>",
+        "format-disconnected": "  <span color='#0096e1'>|</span>",
         "format-alt": "{essid} <span color='#0096e1'>|</span>"
     },
 

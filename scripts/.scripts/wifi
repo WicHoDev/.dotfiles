@@ -13,5 +13,8 @@ case "$1" in
     BLANCA)
         iwctl -- station wlan0 connect 'BLANCA C'
         ;;
+    Spectrum)
+        iwctl -- station wlan0 connect SpectrumSetup-6F
+        ;;
 
 esac

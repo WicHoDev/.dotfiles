@@ -21,8 +21,7 @@ return  {
             ensure_installed = {
                 --add lsp langugaes--
                 "asm_lsp",
-                "clangd",
-                "arduino_language_server",
+                "clangd", "arduino_language_server",
                 --zig
                 "gopls",
                 --pythn

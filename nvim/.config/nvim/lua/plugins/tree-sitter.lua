@@ -1,9 +1,6 @@
 local config = function()
     require("nvim-treesitter").setup({
         indent = {  enable = true, },
-        --[[
-    autotag = {  enable = true, },
-    ]]
         ensure_installed = {
             "asm",
             "c",
