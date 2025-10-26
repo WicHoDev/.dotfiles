@@ -67,3 +67,8 @@ key.set("n", "<leader>st" , function ()
     vim.api.nvim_win_set_height(0,15)
     -- job_id = vim.bi.channel
 end) ]]
+
+
+
+-- Remove any accidental Shift+Enter bindings
+vim.keymap.set({'n','i','v'}, '<S-CR>', '<CR>', { noremap = true, silent = true })

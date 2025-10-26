@@ -1,4 +1,5 @@
-# If you come from bash you might have to change your $PATH.
+env QT_QPA_PLATFORM=xcb
+#If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.scripts/:$PATH"
 
@@ -51,6 +52,9 @@ fi
 export EDITOR=nvim
 export VISUAL=nvim
 
+# enable core dumps
+ulimit -c unlimited
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -61,14 +65,12 @@ export VISUAL=nvim
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-
 # eza is needed
 #     `sudo packman -s eza`
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions" \
 alias lsl="eza --color=always --long --git --icons=always --no-time --no-user" \
 alias tree="ls --tree" \
-alias cl="clear" \
-alias vim='nvim'
-
+alias cl="clear && ll" \
+alias vi='nvim'
 # export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.14.1/
 export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.15.0-dev.905+edf785db0/ #dev version uncomment if needed 
