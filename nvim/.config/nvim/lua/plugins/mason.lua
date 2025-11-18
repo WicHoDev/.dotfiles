@@ -20,11 +20,11 @@ return  {
         masonlsp.setup({
             ensure_installed = {
                 --add lsp langugaes--
-                "asm_lsp",
-                "clangd", "arduino_language_server",
+                -- "asm_lsp",
+                -- "clangd", "arduino_language_server",
                 --zig
-                "gopls",
-                --pythn
+                -- "gopls",
+                "pyright",
                 "lua_ls",
             },
             automatic_installation = true,
