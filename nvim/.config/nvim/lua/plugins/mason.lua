@@ -3,7 +3,7 @@ return  {
     cmd = "Mason",
     event = "BufReadPre",
     dependencies = {
-        "mason-org/mason-lspconfig.nvim", 
+        "mason-org/mason-lspconfig.nvim",
     },
     config = function()
         local mason = require("mason")
