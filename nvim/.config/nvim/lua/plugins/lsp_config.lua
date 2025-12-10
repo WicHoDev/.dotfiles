@@ -34,8 +34,29 @@ return{
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
         ----- Config Servers -----
-        require('lspconfig').lua_ls.setup{capabilities = capabilities}
-        require('lspconfig').clangd.setup{capabilities = capabilities}
+        -- require('lspconfig').lua_ls.setup{capabilities = capabilities}
+        -- require('lspconfig').clangd.setup{capabilities = capabilities}
+        vim.lsp.config("lua_ls", {
+            capabilities = capabilities,
+        })
+
+        vim.lsp.config("cland", {
+            capabilities = capabilities,
+        })
+
+        vim.lsp.config("pyright", {
+            filetype = {"python"},
+            settings = {
+                python = {
+                    analysis = {
+                        autoSearchPaths = true,
+                        useLibraryCodeForType = true,
+                        diagnosticMode = 'opnFilesOnly'
+                    },
+                },
+            },
+            capabilities = capabilities,
+        })
 
         ----- Auto indent -----
         vim.api.nvim_create_autocmd('LspAttach', {
