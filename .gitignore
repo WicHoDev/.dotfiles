@@ -1,0 +1,6 @@
+# [nvim]
+nvim/.config/nvim/.undodir/
+nvim/.config/nvim/lazy-lock.json
+
+# [other]
+SetUp/
