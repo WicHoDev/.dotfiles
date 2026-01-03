@@ -70,7 +70,7 @@ ulimit -c unlimited
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions" \
 alias lsl="eza --color=always --long --git --icons=always --no-time --no-user" \
 alias tree="ls --tree" \
-alias cl="clear && ll" \
+alias cl="clear && ls" \
 alias vi='nvim'
 # export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.14.1/
 export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.15.0-dev.905+edf785db0/ #dev version uncomment if needed 
