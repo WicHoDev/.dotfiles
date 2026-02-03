@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 case "$1" in
-    school)
-        rclone mount school: ~/gdrive/school/ &
-        ;;
-    umount)
-        fusermount3 -u ~/gdrive/school/
+    files)
+        sudo mount /dev/nvme1n1p2 /mnt/files":"
 esac

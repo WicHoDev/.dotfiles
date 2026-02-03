@@ -21,11 +21,12 @@ return  {
             ensure_installed = {
                 --add lsp langugaes--
                 -- "asm_lsp",
-                -- "clangd", "arduino_language_server",
-                --zig
+                "clangd",
+                -- "zls"
                 -- "gopls",
                 "pyright",
                 "lua_ls",
+                -- "rust-analyser" --not requierd
             },
             automatic_installation = true,
         })

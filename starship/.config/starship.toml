@@ -1,6 +1,6 @@
-format = """$directory$git_branch$git_status$line_break$character"""
+format = """$hostname$character$directory$git_branch$git_status$line_break$character"""
 right_format = """$python $git_commit $cmd_duration"""
-add_newline = false
+add_newline = true
 
 [directory]
 
@@ -13,3 +13,8 @@ format = '( [\[$all_status$ahead_behind\]]($style) )'
 [python]
 style = "yellow bold"
 format = '[($virtualenv)]($style)'
+
+[hostname]
+ssh_only = false
+style = "bold green"
+format = "[$hostname]($style)"

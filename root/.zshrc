@@ -1,11 +1,14 @@
-env QT_QPA_PLATFORM=xcb
 #If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.scripts/:$PATH"
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.zsh/.oh-my-zsh"
-ZSH_CUSTOM="$ZSH/custom"
+export PRE_ZSH="$HOME/.config/.zsh"
+
+export ZSH="$PRE_ZSH/.oh-my-zsh"
+export HISTFILE="$PRE_ZSH/.history"
+export ZSH_CUSTOM="$PRE_ZSH/custom"
+export PLUGING="$PRE_ZSH/plugins"
 
 # Theme does not need to be set because of STARSHIP shell prompt
 # ZSH_THEME="blinks"
@@ -28,11 +31,11 @@ eval "$(starship init zsh)" > /dev/null
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
 # Auto-start Hyprland on tty1 when zsh starts
-# if [[ -z "$DISPLAY" && "$(tty)" == "/dev/tty1" && -z "$WAYLAND_DISPLAY" ]]; then
-#     exec Hyprland
-# fi
+if [[ -z $WAYLAND_DISPLAY && $XDG_VTNR -eq 1 ]]; then
+    unset XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP DESKTOP_SESSION
+    exec uwsm start start-hyprland
+fi
 
 # ps -p $SSH_AGENT_PID > /dev/null || eval "$(ssh-agent -s)"
 if [[ -z "$SSH_AUTH_SOCK" || ! -S "$SSH_AUTH_SOCK" ]]; then
@@ -45,15 +48,12 @@ else
     clear
 fi
 
-if uwsm check may-start > /dev/null; then
-    exec systemd-cat -t uwsm_start uwsm start hyprland.desktop
-fi
-
+# Preferred editor for local and remote sessions
 export EDITOR=nvim
 export VISUAL=nvim
 
 # enable core dumps
-ulimit -c unlimited
+# ulimit -c unlimited
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -62,15 +62,10 @@ ulimit -c unlimited
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
+source $ZSH_CUSTOM/aliases.zsh
+#$ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
+
+
 # eza is needed
 #     `sudo packman -s eza`
-alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions" \
-alias lsl="eza --color=always --long --git --icons=always --no-time --no-user" \
-alias tree="ls --tree" \
-alias cl="clear && ls" \
-alias vi='nvim'
-# export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.14.1/
-export PATH=$PATH:~/.programingLanguages/zig/zig-x86_64-linux-0.15.0-dev.905+edf785db0/ #dev version uncomment if needed 
