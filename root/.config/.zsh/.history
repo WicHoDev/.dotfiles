@@ -1,0 +1,265 @@
+: 1770311898:0;lsblk
+: 1770311921:0;sudo mkdir /mnt/USB
+: 1770311924:0;ls /mnt
+: 1770311968:0;sudo mount /nvme1n1p3 /mnt/USB
+: 1770311994:0;sudo mount /dev/nvme1n1p3 /mnt/USB
+: 1770312002:0;cd /mnt/USB
+: 1770312003:0;ls
+: 1770312012:0;clear
+: 1770312024:0;cd
+: 1770312032:0;unmount /mnt/USB
+: 1770312038:0;umount /mnt/USB
+: 1770312045:0;sudo mount /dev/nvme1n1p2 /mnt/USB
+: 1770312053:0;ls /mnt/USB
+: 1770312342:0;cd
+: 1770312343:0;cl
+: 1770312731:0;source .zshrc
+: 1770312733:0;clear
+: 1770312735:0;source .zshrc
+: 1770312746:19;nvim .zshrc
+: 1770312767:0;ls -al
+: 1770312818:2;sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended\
+
+: 1770312834:0;ls
+: 1770312836:0;ls -al
+: 1770312851:2;nvim .zshrc
+: 1770312865:0;rm -rf .zshrc
+: 1770312876:0;mv .zshrc.pre-oh-my-zsh .zshrc
+: 1770312877:0;ls
+: 1770312880:0;clear
+: 1770312881:0;ls -al
+: 1770312890:0;source .zshrc
+: 1770313029:0;clera
+: 1770313034:0;clear
+: 1770313088:0;sudo pacman -S --needed starship
+: 1770313234:0;source .zshrc
+: 1770313236:0;cler
+: 1770313239:0;clear
+: 1770313509:0;cler
+: 1770313510:0;clear
+: 1770313513:0;ls
+: 1770313514:0;clear
+: 1770313578:0;nvim .zshrc
+: 1770313667:0;git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/
+: 1770313671:0;ls -al
+: 1770313681:0;cd .zsh
+: 1770313681:0;ls
+: 1770313683:0;cd plugins
+: 1770313684:0;ls
+: 1770313691:0;source ugin.zsh
+: 1770313692:0;cle
+: 1770313693:0;clear
+: 1770313709:0;source ~/.zshrc
+: 1770313847:0;cd
+: 1770313889:0;cd .config/.zsh/
+: 1770313890:0;ls
+: 1770313894:0;ls -al
+: 1770313904:0;ls .oh-my-zsh
+: 1770313939:0;sudo pacman -S --needed yazi
+: 1770313946:0;clear
+: 1770313948:0;yazi
+: 1770313987:0;cd
+: 1770313987:0;ls
+: 1770313990:0;clear
+: 1770313992:0;ls -al
+: 1770314065:0;vi .config/.zsh/custom/aliases.zsh
+: 1770314071:0;nvim .config/.zsh/custom/aliases.zsh
+: 1770314122:0;mkdir .config/.zsh/custom
+: 1770314124:0;nvim .config/.zsh/custom/aliases.zsh
+: 1770314134:0;source .zshrc
+: 1770314136:0;clear
+: 1770314137:0;cl
+: 1770314176:0;sudo pacman -S --needed eza tree
+: 1770314180:0;cl
+: 1770314180:0;ls
+: 1770314181:0;l
+: 1770314182:0;cl
+: 1770314183:0;eclear
+: 1770314184:0;clear
+: 1770314497:0;yazi
+: 1770314542:0;cl
+: 1770314600:0;vi .zshrc
+: 1770314638:0;yazi
+: 1770314716:0;source .zshrc
+: 1770314723:0;clear
+: 1770314814:0;vi .zshrc
+: 1770316026:0;clear
+: 1770316155:0;lsblk -f
+: 1770316734:0;umount /mnt/USB
+: 1770316740:0;sudo umount /mnt/USB
+: 1770316743:0;lsblk -f
+: 1770316750:0;sudo umount /mnt/USB
+: 1770316751:0;lsblk -f
+: 1770317098:0;cl
+: 1770317104:0;rm Download
+: 1770317107:0;rm -r Download
+: 1770317111:0;cl
+: 1770317115:0;rm -rf Download
+: 1770317117:0;cl
+: 1770318411:0;yazi
+: 1770318905:0;clear
+: 1770318968:0;nmtui
+: 1770319915:0;sudo reboot
+: 1770709984:0;clear
+: 1770709988:0;hyprland
+: 1770710001:0;exit
+: 1770731641:0;vi .config/hypr/hyprland.conf
+: 1770731742:0;sudo pacman -S --needed brighnessctl
+: 1770731746:0;vi .config/hypr/hyprland.conf
+: 1770731778:0;sudo pacman -S --needed brightnessctl
+: 1770731782:0;clear
+: 1770731821:0;vi .config/hypr/hyprland.conf
+: 1770731891:0;sudo pacman -S --needed rofi
+: 1770731898:0;clear
+: 1770731909:0;vi .config/hypr/hyprland.conf
+: 1770731992:0;sudo pacman -Rns wofi
+: 1770731996:0;sudo pacman -Rns rofi
+: 1770731999:0;cl
+: 1770732004:0;sudo pacman -S --needed Wofi
+: 1770732007:0;sudo pacman -S --needed wofi
+: 1770732450:0;vi .config/hypr/hyprland.conf
+: 1770732688:0;python version
+: 1770732690:0;clear
+: 1770732699:0;python3 version
+: 1770732700:0;clear
+: 1770732710:0;sudo pacman -S --needed python
+: 1770732720:0;cl
+: 1770732721:0;lear
+: 1770732723:0;clera
+: 1770732724:0;cl
+: 1770732730:0;python version
+: 1770732739:0;clear
+: 1770732743:0;python --version
+: 1770732745:0;clear
+: 1770732756:0;sudo pacman -S --needed zig
+: 1770732775:0;clear
+: 1770732776:0;ls
+: 1770732778:0;clear
+: 1770732780:0;zig version
+: 1770732782:0;clera
+: 1770732783:0;cl
+: 1770733259:0;yazi
+: 1770733581:0;btop
+: 1770733585:0;sudo pacman -S --needed btop
+: 1770733591:0;cl
+: 1770733593:0;btop
+: 1770734517:0;clear
+: 1770737182:0;time
+: 1770737185:0;clear
+: 1770737187:0;date
+: 1770737292:0;cd .dotfiles
+: 1770737293:0;lc
+: 1770737293:0;cl
+: 1770737294:0;ls
+: 1770737301:0;cl
+: 1770737306:0;stow waybar
+: 1770737313:0;sudo pacman -S --needed waybar
+: 1770737322:0;cl
+: 1770737335:0;vi .config/hypr/hyprland.conf
+: 1770737343:0;cd
+: 1770737344:0;vi .config/hypr/hyprland.conf
+: 1770737388:0;hyprctl reload
+: 1770737389:0;cl
+: 1770737395:0;clear
+: 1770737425:0;hyprctl kill
+: 1770737476:0;logout
+: 1770737481:0;clear
+: 1770737511:0;hyprshutdown
+: 1770737524:0;hyprctl dispatch exit
+: 1770737533:0;cl
+: 1770737535:0;clear
+: 1770737536:0;cl
+: 1770737539:0;clear
+: 1770737540:0;ls
+: 1770737541:0;cl
+: 1770737548:0;vi .zshrc
+: 1770737565:0;cl
+: 1770737569:0;clear
+: 1770737575:0;cd
+: 1770737576:0;cl
+: 1770737582:0;start-hyprland
+: 1770737684:0;waybar
+: 1770737698:0;cl
+: 1770737703:0;vi .config/hypr/hyprland.conf
+: 1770737743:0;hyprctl reload
+: 1770737752:0;vi .config/hypr/hyprland.conf
+: 1770737793:0;hyprctl dispatch exit
+: 1770737796:0;start-hyprland
+: 1770737804:0;clear
+: 1770738410:0;hyprctl dispatch exit
+: 1770738415:0;log
+: 1770738419:0;loout
+: 1770738422:0;logout
+: 1770738429:0;:q
+: 1770738437:0;sudo reboot
+: 1775548643:0;sudo pacman -Syu
+: 1775566838:0;clear
+: 1775566985:0;cl
+: 1775566988:0;ls
+: 1775566991:0;ls -al
+: 1775566997:0;clear
+: 1775567107:0;sudo reboot
+: 1778598333:0;sudo pacman -Syu
+: 1778616613:0;paru -Syu
+: 1778616674:0;cl
+: 1778616882:0;pacman -S gnuradio
+: 1778616896:0;sudo pacman -S gnuradio
+: 1778616920:0;sudo pacman -Syu gnuradio
+: 1778616984:0;gnuradio-companion
+: 1778617101:0;which gnuradio-companion
+: 1778617116:0;pacman -Q gnuradio
+: 1778617125:0;which gnuradio-companion
+: 1778617160:0;pacman -Q gnuradio
+: 1778617181:0;sudo pacman -Syu gnuradio
+: 1778617228:0;cl
+: 1778617980:0;sudo shutdown -now
+: 1778618050:0;sudo shutdown -h now
+: 1779436454:0;sudo pacman -Syu
+: 1779436503:0;cd .config/hypr
+: 1779436503:0;ls
+: 1779436517:0;vi hyprland.conf
+: 1779436884:0;vi .config/hypr/hyprland.conf
+: 1779436917:0;hyprctl dispatch exit
+: 1779436941:0;sudo pacman -Syu
+: 1779436953:0;sudo paru -Syu
+: 1779436966:0;paru -Syu
+: 1779437419:0;vi .config/hypr/hyprland.conf
+: 1779466989:0;xrandr --query
+: 1779467008:0;hyprctl monitors
+: 1779467026:0;btop
+: 1779467089:0;vi .config/hypr/hyprland.conf
+: 1779467096:0;vi .zshrc
+: 1779473128:0;cl
+: 1779473130:0;ls
+: 1779473136:0;lsl
+: 1779473140:0;ls -al
+: 1779473155:0;cd  .config
+: 1779473156:0;ls
+: 1779473158:0;lsl
+: 1779473166:0;ls dconf
+: 1779473180:0;ls hypr
+: 1779473192:0;cl
+: 1779473193:0;ls
+: 1779473201:0;..
+: 1779473201:0;cl
+: 1779473202:0;ls
+: 1779473204:0;ls -al
+: 1779473222:0;vi .zsh/
+: 1779473239:0;cat .zshrc
+: 1779473248:0;q
+: 1779473248:0;cl
+: 1779473252:0;cd  .config
+: 1779473254:0;cl
+: 1779473259:0;clear
+: 1779473260:0;ls
+: 1779473268:0;..
+: 1779473269:0;cl
+: 1779473272:0;clear
+: 1779473275:0;ls -al
+: 1779473294:0;vi .zshrc
+: 1779473306:0;cd .config
+: 1779473307:0;ls
+: 1779473317:0;ls .zsh
+: 1779473329:0;CL
+: 1779473331:0;cl
+: 1779473335:0;yazi

@@ -24,7 +24,7 @@ export PLUGING="$PRE_ZSH/plugins"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh  #need to install autosuggestion plugin
+source $PLUGING/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh  #need to install autosuggestion plugin
 eval "$(starship init zsh)" > /dev/null
 
 # ----- User configuration ----- #
@@ -34,7 +34,7 @@ export LANG=en_US.UTF-8
 # Auto-start Hyprland on tty1 when zsh starts
 if [[ -z $WAYLAND_DISPLAY && $XDG_VTNR -eq 1 ]]; then
     unset XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP DESKTOP_SESSION
-    exec uwsm start start-hyprland
+    exec start-hyprland
 fi
 
 # ps -p $SSH_AGENT_PID > /dev/null || eval "$(ssh-agent -s)"
