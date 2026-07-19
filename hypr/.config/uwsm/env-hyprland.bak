@@ -1,0 +1,35 @@
+# ════════════════════════════════════════════════════════════════════
+# uwsm Environment Variables - HYPRLAND-ONLY
+# Location: ~/.config/uwsm/env-hyprland
+# ════════════════════════════════════════════════════════════════════
+# These apply ONLY when Hyprland is the active compositor.
+# Contains HYPR* and AQ_* (Aquamarine renderer) variables.
+# Format: one "export KEY=VALUE" per line, NO comments inline.
+# ════════════════════════════════════════════════════════════════════
+
+# ════════════════════════════════════════════════════════════════════
+# MULTI-GPU CONFIGURATION - CRITICAL FOR DUPLICATE CURSOR FIX
+# ════════════════════════════════════════════════════════════════════
+# System topology (from lspci -d ::03xx):
+#   - PCI 00:02.0 → Intel Arrow Lake-S iGPU (drives eDP-1 laptop screen)
+#   - PCI 02:00.0 → NVIDIA RTX 5070 Max-Q (drives HDMI-A-1 and offload)
+#
+# Strategy: Intel iGPU primary, NVIDIA dGPU secondary
+#   - Better battery life
+#   - More stable on Wayland
+#   - NVIDIA still available via PRIME render offload
+#
+# Using persistent PCI paths instead of /dev/dri/card* (which can change
+# between reboots).
+# ════════════════════════════════════════════════════════════════════
+
+export AQ_DRM_DEVICES=/dev/dri/card2:/dev/dri/card1
+
+# ─── NVIDIA Multi-GPU Workarounds ──────────────────────────────────
+# Disable forcing linear modifiers on multi-GPU buffers
+# Fixes rendering issues when NVIDIA is secondary GPU
+export AQ_FORCE_LINEAR_BLIT=0
+
+# Disable explicit syncing on multi-GPU buffers
+# Required for stable NVIDIA secondary rendering
+export AQ_MGPU_NO_EXPLICIT=1

@@ -1,0 +1,17 @@
+vim.pack.add {
+    "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/mason-org/mason.nvim",
+    "https://github.com/mason-org/mason-lspconfig.nvim",
+    "https://github.com/windwp/nvim-autopairs",
+    "https://github.com/nvim-mini/mini.nvim",
+    "https://github.com/marko-cerovac/material.nvim",
+    "https://github.com/nvim-treesitter/nvim-treesitter",
+    "https://github.com/nvim-telescope/telescope.nvim",
+    "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+    "https://github.com/nvim-lua/plenary.nvim",
+}
+
+
+require("vim._core.ui2").enable({})
+require("config.init")
+require("plugins.init")

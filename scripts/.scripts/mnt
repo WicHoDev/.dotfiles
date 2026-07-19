@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-case "$1" in
-    files)
-        sudo mount /dev/nvme1n1p2 /mnt/files":"
-esac
